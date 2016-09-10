@@ -11,7 +11,7 @@ namespace WingtipToys.Models
         [Required]
         [StringLength(100)]
         [Display(Name = "Name")]
-        public string CagegoryName { get; set; }
+        public string CategoryName { get; set; }
 
         [Display(Name = "Product Description")]
         public string Description { get; set; }

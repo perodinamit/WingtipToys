@@ -5,7 +5,7 @@ namespace WingtipToys.Models
     public class Product
     {
         [ScaffoldColumn(false)]
-        public int PProductId { get; set; }
+        public int ProductID { get; set; }
 
         [Required]
         [StringLength(100)]
