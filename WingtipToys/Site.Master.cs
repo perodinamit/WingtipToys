@@ -7,6 +7,8 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
+using System.Linq;
+using WingtipToys.Models;
 
 namespace WingtipToys
 {
@@ -72,6 +74,23 @@ namespace WingtipToys
 
         }
 
+        public IQueryable<Category> GetCategories()
+        {
+            var _db = new WingtipToys.Models.ProductContext();
+            IQueryable<Category> query = _db.Categories;
+            return query;
+        }
+    
+        /*
+        The above code is executed when any page that uses the master page is loaded in the browser.
+        The ListView control (named "categoryList") that you added earlier in this tutorial uses model
+        binding to select data. In the markup of the ListView control you set the control's
+        SelectMethod property to the GetCategories method, shown above. The ListView
+        control calls the GetCategories method at the appropriate time in the page life cycle and
+        automatically binds the returned data.
+        */
+
+
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
@@ -79,3 +98,4 @@ namespace WingtipToys
     }
 
 }
+ 
