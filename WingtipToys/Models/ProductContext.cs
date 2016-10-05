@@ -1,5 +1,4 @@
-﻿using System;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 
 /*
 The ProductContext class represents Entity Framework product database context, which
@@ -16,5 +15,6 @@ namespace WingtipToys.Models
         }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<CartItem> ShoppingCartItems { get; set; }
     }
 }

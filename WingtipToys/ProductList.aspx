@@ -51,6 +51,11 @@
                                         <b>Price: </b><%#:String.Format("{0:c}", Item.UnitPrice)%>
                                     </span>
                                     <br />
+                                    <a href="/AddToCart.aspx?productID=<%#:Item.ProductID%>">
+                                        <span class="ProductListItem">
+                                            <b>Add To Cart</b>
+                                        </span>
+                                    </a> 
                                 </td>
                             </tr>
                             <tr>
@@ -65,8 +70,7 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <table id="groupPlaceholderContainer"
-                                        runat="server" style="width: 100%">
+                                    <table id="groupPlaceholderContainer" runat="server" style="width: 100%">
                                         <tr id="groupPlaceholder"></tr>
                                     </table>
                                 </td>
